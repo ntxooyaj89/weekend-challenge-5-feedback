@@ -7,6 +7,7 @@ import { HashRouter as Router, Route, } from 'react-router-dom';
 import Home from './../Home/Home'
 import Understanding from './../Understanding/Understanding'
 import Support from './../Support/Support'
+import Comments from './../Comments/Comments'
 
 class App extends Component {
   render() {
@@ -23,7 +24,8 @@ class App extends Component {
           <Route exact path="/" component={Home}/>
           <Route exact path="/understand-content" component={Understanding}/>
           <Route exact path="/support" component={Support}/>
-          <Route />
+          <Route exact path="/comments" component={Comments}/>
+          {/* <Route exact path="/feedback-review" component={ReviewPage}/> */}
         
         </div>
         </Router>

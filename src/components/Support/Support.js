@@ -24,7 +24,7 @@ class Support extends Component {
             payload: this.state.support
         };
         this.props.dispatch(action);
-        // this.props.history.push('/support')
+        this.props.history.push('/comments')
 
     }
 
@@ -33,7 +33,7 @@ class Support extends Component {
             <div>
                 <h1>How well are you being Supported</h1>
                 <div>
-                    <input onChange={this.changeInput} placeholder="understand?" />
+                    <input onChange={this.changeInput} placeholder="support?" />
                     <button onClick={this.handleClick}>Next</button>
                     {JSON.stringify(this.props.reduxStore.supportReducer)}
                 </div>

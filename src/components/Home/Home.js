@@ -10,14 +10,14 @@ class Home extends Component {
 
         this.state = {
 
-            feelings: '',
+            feeling: '',
         }
     }
 
 
     feelingChange = (event) => {
         this.setState({
-            feelings: event.target.value,
+            feeling: event.target.value,
         })
 
     }
@@ -27,7 +27,7 @@ class Home extends Component {
     handleClick = () =>{
         console.log('this is handleClick');
         const action = {type: 'FEELINGS',
-                        payload: this.state.feelings};
+                        payload: this.state.feeling};
         this.props.dispatch(action);                
         this.props.history.push('/understand-content')
 

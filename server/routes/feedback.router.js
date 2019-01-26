@@ -15,14 +15,20 @@ router.get('/', (req, res)=>{
 })
 
 router.post('/', (req, res) =>{
-    console.log('this is POST in /feeling');
+    console.log('this is POST in /feeling', req.body);
    
-    pool.query(`INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
-                 VALUES ($1, $2, $3, $4`)
+    const queryString = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+                 VALUES ($1, $2, $3, $4);`; // <---- help sanatize our values
     pool.query(queryString, [req.body.feeling, req.body.understanding, req.body.support, req.body.comments]) 
     .then(result =>{
-        res.sendStatus(201)
-    }).catch(500);            
+        console.log(result);
+        res.sendStatus(200);
+    }).catch(error =>{
+        console.log('there is error in POST', error);
+        res.sendStatus(500);            
+
+    });
+    
 })
 
 module.exports = router;

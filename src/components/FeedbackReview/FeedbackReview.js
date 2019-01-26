@@ -5,7 +5,34 @@ import axios from 'axios';
 
 class FeedBackReiview extends Component{
 
-    sendFeedback
+    // this is push feedback into our database...
+
+    feedBackToSend = () =>{
+        const newFeedBack =
+        {
+            feeling: this.props.reduxStore.feelingReducer,
+            understanding: this.props.reduxStore.understandingReducer,
+            support: this.props.reduxStore.supportReducer,
+            comments: this.props.reduxStore.commentReducer,
+        }
+        axios({
+            method: 'POST',
+            url: '/feeling',
+            data: newFeedBack
+        }).then(response =>{
+            console.log(response);
+        }).catch(error =>{
+            console.log('Error in Post', error);
+        });
+        
+    }
+
+    sendFeedback = () =>{
+        this.feedBackToSend();
+        this.props.history.push('/');
+    }
+
+
     render(){
         return(
             <div>
@@ -14,7 +41,7 @@ class FeedBackReiview extends Component{
                 <h3>{this.props.reduxStore.understandingReducer}</h3>
                 <h3>{this.props.reduxStore.supportReducer}</h3>
                 <h3>{this.props.reduxStore.commentReducer}</h3>
-                {/* <h3></h3> */}
+                <button onClick={this.sendFeedback}>Submit</button>
             </div>
         )
     }

@@ -5,6 +5,8 @@ import './App.css';
 // this line allow me to use Route to navagate to other files
 import { HashRouter as Router, Route, } from 'react-router-dom';
 import Home from './../Home/Home'
+import Understanding from './../Understanding/Understanding'
+import Support from './../Support/Support'
 
 class App extends Component {
   render() {
@@ -19,8 +21,8 @@ class App extends Component {
         <div>
         
           <Route exact path="/" component={Home}/>
-          <Route />
-          <Route />
+          <Route exact path="/understand-content" component={Understanding}/>
+          <Route exact path="/support" component={Support}/>
           <Route />
         
         </div>

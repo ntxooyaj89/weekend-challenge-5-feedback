@@ -9,6 +9,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
+const feelingRouter = require('./routes/feedback.router');
+app.use('/feeling', feelingRouter)
 
 
 /** ---------- START SERVER ---------- **/

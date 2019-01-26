@@ -24,7 +24,7 @@ class Comments extends Component {
             payload: this.state.comments
         };
         this.props.dispatch(action);
-        // this.props.history.push('/feedback-review')
+        this.props.history.push('/feedback-review')
 
     }
 

@@ -12,13 +12,21 @@ class FeedBackReview extends Component {
         }
     }
 
+    toggleFeedback = () =>{
+        this.setState({
+            checkFeedback: !this.state.checkFeedback
+        })
+    }
+
+    
+
     checkMyfeedback = () =>{
-        const action = {type: 'CHECK_FEEDBACK',
-                        payload: this.state,
-                        };
-        this.props.dispatch(action);
+        // const action = {type: 'CHECK_FEEDBACK',
+        //                 payload: this.state,
+        //                 };
+        // this.props.dispatch(action);
         
-        if(this.props.reduxStore.checkFeedbackReducer === true){
+        if(this.state.checkFeedback === true){
             this.sendFeedback();
         }
         else{

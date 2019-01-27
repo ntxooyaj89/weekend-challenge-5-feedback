@@ -43,7 +43,7 @@ const commentReducer = (state = [], action) => {
 
 const checkFeedbackReducer = (state = false, action) =>{
    if(action.type === 'CHECK_FEEDBACK'){
-       return action.payload;
+       return !action.payload;
    }
    return state;
     

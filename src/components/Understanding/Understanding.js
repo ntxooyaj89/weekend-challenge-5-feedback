@@ -35,7 +35,7 @@ class Understanding extends Component {
             <div>
                 <input onChange={this.changeInput} placeholder="understand?"/>
                 <button onClick={this.handleClick}>Next</button>
-                {JSON.stringify(this.props.reduxStore.understandingReducer)}
+                {/* {JSON.stringify(this.props.reduxStore.understandingReducer)} */}
             </div>
             </div>
             

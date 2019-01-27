@@ -44,10 +44,7 @@ class Home extends Component {
                     <button onClick={this.handleClick}>Next</button>
                     {/* <h3>{this.props.reduxStore.feelingReducer}</h3> */}
                     {/* {JSON.stringify(this.props.reduxStore.feelingReducer)} */}
-                    <div>
-                        {this.props.reduxStore.feelingReducer}  
-                    </div>
-                                             
+                                 
                     
                     
                 </div>

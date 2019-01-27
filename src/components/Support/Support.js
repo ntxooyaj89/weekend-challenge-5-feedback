@@ -35,7 +35,7 @@ class Support extends Component {
                 <div>
                     <input onChange={this.changeInput} placeholder="support?" />
                     <button onClick={this.handleClick}>Next</button>
-                    {JSON.stringify(this.props.reduxStore.supportReducer)}
+                    {/* {JSON.stringify(this.props.reduxStore.supportReducer)} */}
                 </div>
             </div>
 

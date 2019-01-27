@@ -29,7 +29,7 @@ class Home extends Component {
         const action = {type: 'FEELINGS',
                         payload: this.state.feeling};
         this.props.dispatch(action);                
-        this.props.history.push('/understand-content')
+        this.props.history.push('/review-feelings')
 
     }
 

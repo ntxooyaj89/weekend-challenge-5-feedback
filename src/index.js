@@ -39,13 +39,27 @@ const commentReducer = (state = [], action) => {
 }
 
 
+
+
+const checkFeedbackReducer = (state = true, action) =>{
+    const feedbackReady = action.payload;
+    if(action.type === 'CHECK_FEEDBACK'){
+        return [...state, feedbackReady]
+    }else if(action.type ==='INCOMPLETE_FEEDBACK'){
+        return action.payload;
+    }
+    return state
+}
+
+
 //Create store
 const storeInstance = createStore(
     combineReducers({
         feelingReducer,
         understandingReducer,
         supportReducer,
-        commentReducer
+        commentReducer,
+        checkFeedbackReducer
         
     }),
     applyMiddleware(logger),

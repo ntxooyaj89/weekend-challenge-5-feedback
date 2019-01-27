@@ -24,7 +24,7 @@ class Understanding extends Component {
             payload: this.state.understanding
         };
         this.props.dispatch(action);
-        this.props.history.push('/support')
+        this.props.history.push('/review-understanding')
 
     }
 

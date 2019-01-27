@@ -24,7 +24,7 @@ class Support extends Component {
             payload: this.state.support
         };
         this.props.dispatch(action);
-        this.props.history.push('/comments')
+        this.props.history.push('/review-support')
 
     }
 

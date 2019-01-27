@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 class SucessPage extends Component {
 
     handleClick = () => {
-        this.props.history.push('/')
+        this.props.history.push('/');
     }
 
 
@@ -14,6 +14,8 @@ class SucessPage extends Component {
     return (
             <form onSubmit={this.handleClick}>
                 <h1>Thank You!!!</h1>
+                <input placeholder="Leave new feedback"/>
+                <input type="submit" value="submit"/>
                 
             </form>
         )

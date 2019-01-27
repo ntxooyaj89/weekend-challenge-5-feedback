@@ -41,14 +41,12 @@ const commentReducer = (state = [], action) => {
 
 
 
-const checkFeedbackReducer = (state = true, action) =>{
-    const feedbackReady = action.payload;
-    if(action.type === 'CHECK_FEEDBACK'){
-        return [...state, feedbackReady]
-    }else if(action.type ==='INCOMPLETE_FEEDBACK'){
-        return action.payload;
-    }
-    return state
+const checkFeedbackReducer = (state = false, action) =>{
+   if(action.type === 'CHECK_FEEDBACK'){
+       return action.payload;
+   }
+   return state;
+    
 }
 
 

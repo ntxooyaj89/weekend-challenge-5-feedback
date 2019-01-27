@@ -35,7 +35,7 @@ class Comments extends Component {
                 <div>
                     <input onChange={this.changeInput} placeholder="add comments here" />
                     <button onClick={this.handleClick}>Next</button>
-                    {JSON.stringify(this.props.reduxStore.commentReducer)}
+                    {/* {JSON.stringify(this.props.reduxStore.commentReducer)} */}
                 </div>
             </div>
 

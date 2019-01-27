@@ -5,6 +5,37 @@ import axios from 'axios';
 
 class FeedBackReview extends Component {
 
+    constructor(){
+        super();
+        this.state ={
+            checkFeedback: true,
+        }
+    }
+
+    checkMyfeedback = () =>{
+        const action = {type: 'CHECK_FEEDBACK',
+                        payload: this.state,
+                        };
+        this.props.dispatch(action);
+        
+        if(this.props.reduxStore.checkFeedbackReducer === true){
+            this.sendFeedback();
+        }
+        else{
+            this.incompleteFeedback();
+        }
+    }
+
+    sendFeedback = () => {
+        
+        this.feedBackToSend();
+        this.props.history.push('/success-page');
+    }
+
+    incompleteFeedback = () =>{
+        this.props.history.push('/review-commets')
+    }
+
     
 
     //this is push feedback into our database...
@@ -26,11 +57,6 @@ class FeedBackReview extends Component {
             console.log('Error in Post', error);
         });
 
-    }
-
-    sendFeedback = () =>{
-        this.feedBackToSend();
-        this.props.history.push('/success-page');
     }
 
 

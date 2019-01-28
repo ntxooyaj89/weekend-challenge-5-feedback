@@ -17,7 +17,8 @@ class Understanding extends Component {
 
     }
 
-    handleClick = () =>{
+    handleClick = (event) =>{
+        event.preventDefault();
         console.log('this is handleClick');
         const action = {
             type: 'UNDERSTANDING',
@@ -32,11 +33,11 @@ class Understanding extends Component {
         return(
             <div>
             <h1>How well did you understanding the content</h1>
-            <div>
+            <form onSubmit={this.handleClick}>
                 <input onChange={this.changeInput} placeholder="understand?"/>
-                <button onClick={this.handleClick}>Next</button>
+                <button type="submit">Next</button>
                 {/* {JSON.stringify(this.props.reduxStore.understandingReducer)} */}
-            </div>
+            </form>
             </div>
             
         )

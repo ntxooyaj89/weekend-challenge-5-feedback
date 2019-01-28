@@ -24,7 +24,8 @@ class Home extends Component {
 
     
 
-    handleClick = () =>{
+    handleClick = (event) =>{
+        event.preventDefault();
         console.log('this is handleClick');
         const action = {type: 'FEELINGS',
                         payload: this.state.feeling};
@@ -38,16 +39,16 @@ class Home extends Component {
         return(
             <div>
                 {/* <h1>Home</h1> */}
-                <div>
+                <form onSubmit={this.handleClick}>
                     <h1>How are you feeling today?</h1>
                     <input onChange={this.feelingChange} placeholder="feeling?"/>
-                    <button onClick={this.handleClick}>Next</button>
+                    <button type="submit">Next</button>
                     {/* <h3>{this.props.reduxStore.feelingReducer}</h3> */}
                     {/* {JSON.stringify(this.props.reduxStore.feelingReducer)} */}
                                  
                     
                     
-                </div>
+                </form>
             </div>
         )
     }

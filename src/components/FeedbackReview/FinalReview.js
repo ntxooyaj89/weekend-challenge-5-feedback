@@ -8,14 +8,16 @@ class FeedBackReview extends Component {
     constructor(){
         super();
         this.state ={
-            checkFeedback: true,
+            feedbackOk: true,
         }
     }
 
     toggleFeedback = () =>{
         this.setState({
-            checkFeedback: !this.state.checkFeedback
+           feedbackOk: !this.state.feedbackOk,
         })
+
+        console.log('this is feedbackOk', this.state);
     }
 
     
@@ -26,7 +28,8 @@ class FeedBackReview extends Component {
         //                 };
         // this.props.dispatch(action);
         
-        if(this.state.checkFeedback === true){
+        
+        if(this.state.feedbackOk === true){
             this.sendFeedback();
         }
         else{

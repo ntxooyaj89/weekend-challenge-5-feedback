@@ -43,13 +43,7 @@ class FeedBackReiview extends Component{
    
 
     render(){
-        console.log(this.state);
-       
-
-        
-
-       
-
+      
        return(
             <div>
                <h1>Review Your Feedback</h1>

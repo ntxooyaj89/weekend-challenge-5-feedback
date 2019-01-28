@@ -11,23 +11,18 @@ class ReiviewComments extends Component {
 
 
     render() {
-        console.log(this.state);
-
-
-
-
-
+      
 
         return (
             <div>
                 <h1>Review Your Feedback</h1>
-                <div>
+                <form onSubmit={this.handleClick}>
                     <h3>{this.props.reduxStore.feelingReducer}</h3>
                     <h3>{this.props.reduxStore.understandingReducer}</h3>
                     <h3>{this.props.reduxStore.supportReducer}</h3>
                     <h3>{this.props.reduxStore.commentReducer}</h3>
-                    <button onClick={this.handleClick}>Next</button>
-                </div>
+                    <button type="submit">Next</button>
+                </form>
 
             </div>
         )

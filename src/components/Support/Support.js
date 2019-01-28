@@ -17,7 +17,8 @@ class Support extends Component {
 
     }
 
-    handleClick = () => {
+    handleClick = (event) => {
+        event.preventDefault();
         console.log('this is handleClick');
         const action = {
             type: 'SUPPORT',
@@ -30,14 +31,14 @@ class Support extends Component {
 
     render() {
         return (
-            <div>
+            <form onSubmit={this.handleClick}>
                 <h1>How well are you being Supported</h1>
                 <div>
                     <input onChange={this.changeInput} placeholder="support?" />
-                    <button onClick={this.handleClick}>Next</button>
+                    <button type="submit">Next</button>
                     {/* {JSON.stringify(this.props.reduxStore.supportReducer)} */}
                 </div>
-            </div>
+            </form>
 
         )
     }

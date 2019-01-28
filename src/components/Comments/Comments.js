@@ -17,7 +17,8 @@ class Comments extends Component {
 
     }
 
-    handleClick = () => {
+    handleClick = (event) => {
+        event.preventDefault();
         console.log('this is handleClick');
         const action = {
             type: 'COMMENTS',
@@ -32,11 +33,11 @@ class Comments extends Component {
         return (
             <div>
                 <h1>Leave a comments</h1>
-                <div>
+                <form onSubmit={this.handleClick}>
                     <input onChange={this.changeInput} placeholder="add comments here" />
-                    <button onClick={this.handleClick}>Next</button>
+                    <button type="submit">Next</button>
                     {/* {JSON.stringify(this.props.reduxStore.commentReducer)} */}
-                </div>
+                </form>
             </div>
 
         )

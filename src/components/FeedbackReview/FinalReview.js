@@ -11,17 +11,18 @@ class FeedBackReview extends Component {
             feedbackOk: true,
         }
     }
-
+   
+    // this fucntion is created to use to toggle the submit page
     toggleFeedback = () =>{
         this.setState({
            feedbackOk: !this.state.feedbackOk,
         })
 
-        console.log('this is feedbackOk', this.state);
+       
     }
 
     
-
+   // checking the status of state with if conditional in the function...
     checkMyfeedback = () =>{
         // const action = {type: 'CHECK_FEEDBACK',
         //                 payload: this.state,
@@ -37,12 +38,16 @@ class FeedBackReview extends Component {
         }
     }
 
+
+    // if pass the conditional with true run this function
     sendFeedback = () => {
         
         this.feedBackToSend();
         this.props.history.push('/success-page');
     }
 
+
+    // if incomplete feedback run this function...
     incompleteFeedback = () =>{
         this.props.history.push('/review-commets')
     }
@@ -83,6 +88,7 @@ class FeedBackReview extends Component {
                     <h3>{this.props.reduxStore.supportReducer}</h3>
                     <h3>{this.props.reduxStore.commentReducer}</h3>
                     <button onClick={this.sendFeedback}>Next</button>
+                    {JSON.stringify(this.state)}
                 </div>
 
             </div>

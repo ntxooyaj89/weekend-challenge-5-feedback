@@ -5,7 +5,8 @@ import { connect } from 'react-redux'
 
 class ReiviewComments extends Component {
 
-    handleClick = () => {
+    handleClick = (event) => {
+        event.preventDefault();
         this.props.history.push('/final-review')
     }
 
